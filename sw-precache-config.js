@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\/api\//,
+      urlPattern: /\/data\//,
       handler: 'fastest',
       options: {
         cache: {
