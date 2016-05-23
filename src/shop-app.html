@@ -456,10 +456,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // Response by a11y announcing the section and syncronizing the category.
       _onChangeSection: function(event) {
         var detail = event.detail;
-        this.categoryName = detail.category || '';
-        // Announce the page's title
-        if (detail.title) {
-          this._announce(detail.title);
+
+        // don't update categoryName if we're viewing a detail record
+        if(this.routeData.page !== 'detail') {
+          this.categoryName = detail.category || '';
+          console.log('set categoryName to', this.categoryName, detail);
+          // Announce the page's title
+          if (detail.title) {
+            this._announce(detail.title);
+          }
         }
       },
 
