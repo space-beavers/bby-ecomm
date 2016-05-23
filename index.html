@@ -43,7 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-weight: 600;
       letter-spacing: 0.3em;
       color: #202020;
-      padding: 0 16px;
+      padding: 0;
       overflow: visible;
     }
 
@@ -57,7 +57,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body>
 
-  <shop-app unresolved><img src="/images/logo.svg" height="42" /></shop-app>
+  <shop-app unresolved>
+    <div class="header" style="height: 64px; background-color: rgba(0,59,100, 0.95);">
+      <img src="/images/logo.svg" height="42" />
+    </div>
+  </shop-app>
 
   <script>
     window.performance && performance.mark && performance.mark('index.html');
