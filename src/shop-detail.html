@@ -17,6 +17,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-image.html">
 <link rel="import" href="shop-select.html">
 
+<link rel="import" href="image-dimensions-behavior.html">
+
 <dom-module id="shop-detail">
 
   <template>
@@ -144,12 +146,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <shop-category-data
         id="categoryData"
         category-name="[[routeData.category]]"
-        item-name="[[routeData.item]]"
+        item-sku="[[routeData.item]]"
         item="{{item}}"
         failure="{{failure}}"></shop-category-data>
 
     <div id="content" hidden$="[[failure]]">
-      <shop-image alt="[[item.name]]" src="[[item.thumbnailImage]]"></shop-image>
+      <shop-image alt="[[item.name]]" src="[[_imageAt400x400(item.thumbnailImage)]]"></shop-image>
       <div class="detail" has-content$="[[_isDefined(item)]]">
         <h1>[[item.name]]</h1>
         <div class="price">[[_formatPrice(item.salePrice)]]</div>
@@ -230,6 +232,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       observers: [
         '_itemChanged(item, visible)'
       ],
+
+      behaviors: [ImageDimensionsBehavior],
 
       _itemChanged: function(item, visible) {
         if (visible) {

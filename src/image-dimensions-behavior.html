@@ -1,0 +1,15 @@
+<script>
+  ImageDimensionsBehavior = {
+      _convertDimensions: function(imagePath, width, height) {
+        return imagePath ? imagePath.replace(/150x150/, width + 'x' + height) : imagePath;
+      },
+
+      _imageAt400x400: function(imagePath) {
+        return this._convertDimensions(imagePath, 400, 400);
+      },
+
+      _imageAt75x75: function(imagePath) {
+        return this._convertDimensions(imagePath, 75, 75);
+      }
+    };
+</script>

@@ -15,6 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-image.html">
 <link rel="import" href="shop-select.html">
 
+<link rel="import" href="image-dimensions-behavior.html">
+
 <dom-module id="shop-cart-item">
 
   <template strip-whitespace>
@@ -166,12 +168,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-    <a href$="/detail/[[entry.item.category]]/[[entry.item.name]]" title$="[[entry.item.title]]">
-      <shop-image src="[[entry.item.image]]" alt="[[entry.item.title]]"></shop-image>
+    <a href$="/detail/[[entry.item.category]]/[[entry.item.sku]]" title$="[[entry.item.name]]">
+      <shop-image src="[[_imageAt75x75(entry.item.thumbnailImage)]]" alt="[[entry.item.name]]"></shop-image>
     </a>
     <div class="flex">
       <div class="name">
-        <a href$="/detail/[[entry.item.category]]/[[entry.item.name]]">[[entry.item.title]]</a>
+        <a href$="/detail/[[entry.item.category]]/[[entry.item.sku]]">[[entry.item.name]]</a>
       </div>
       <div class="detail">
         <div class="quantity">
@@ -196,7 +198,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </shop-select>
         </div>
         <div class="size">Size: <span>[[entry.size]]</span></div>
-        <div class="price">[[_formatPrice(entry.item.price)]]</div>
+        <div class="price">[[_formatPrice(entry.item.salePrice)]]</div>
 
         <!--
           Use on-click instead of on-tap to prevent the next cart item to be focused
@@ -218,6 +220,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         entry: Object
 
       },
+
+      behaviors: [ImageDimensionsBehavior],
 
       _quantityChange: function() {
         this._setCartItem(parseInt(this.$.quantitySelect.value, 10));

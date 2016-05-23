@@ -40,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         name: 'cell_phones_plans',
         title: 'Cell Phones & Plans',
         searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
-        image: '/images/cell_phones_plans.png',
+        image: '/images/cell_phones_plans.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
       }
     ];
@@ -53,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         categoryName: String,
 
-        itemName: String,
+        itemSku: String,
 
         categories: {
           type: Array,
@@ -70,7 +70,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         item: {
           type: Object,
-          computed: '_computeItem(category.items, itemName)',
+          computed: '_computeItem(category.items, itemSku)',
           notify: true
         },
 
@@ -99,9 +99,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return categoryObj;
       },
 
-      _computeItem: function(items, itemName) {
+      _computeItem: function(items, itemSku) {
         for (var i = 0, item; item = items[i]; ++i) {
-          if (item.name === itemName) {
+          if (item.sku === itemSku) {
             return item;
           }
         }

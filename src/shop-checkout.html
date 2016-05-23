@@ -651,7 +651,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _getEntryTotal: function(entry) {
-        return this._formatPrice(entry.quantity * entry.item.price);
+        return this._formatPrice(entry.quantity * entry.item.salePrice);
       },
 
       _visibleChanged: function(visible) {

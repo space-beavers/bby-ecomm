@@ -47,12 +47,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       overflow: visible;
     }
 
+    shop-app[unresolved] img {
+      display: inline-block;
+      margin-top: 7px;
+    }
+
   </style>
 
 </head>
 <body>
 
-  <shop-app unresolved>SHOP</shop-app>
+  <shop-app unresolved><img src="/images/logo.svg" height="42" /></shop-app>
 
   <script>
     window.performance && performance.mark && performance.mark('index.html');

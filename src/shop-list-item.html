@@ -11,6 +11,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
+<link rel="import" href="image-dimensions-behavior.html">
+
 <dom-module id="shop-list-item">
 
   <template>
@@ -51,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-    <shop-image src="[[_formatImageUrl(item.thumbnailImage)]]" alt="[[item.name]]"></shop-image>
+    <shop-image src="[[_imageAt400x400(item.thumbnailImage)]]" alt="[[item.name]]"></shop-image>
     <div class="title">[[item.name]]</div>
     <span class="price">[[_formatPrice(item.salePrice)]]</span>
 
@@ -69,12 +71,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       },
 
+      behaviors: [ImageDimensionsBehavior],
+
       _formatPrice: function(price) {
         return price ? '$' + price.toFixed(2) : '';
-      },
-
-      _formatImageUrl: function(thumbnailImage) {
-        return thumbnailImage ? thumbnailImage.replace(/150x150/, '400x400') : thumbnailImage;
       }
 
     });

@@ -90,7 +90,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _computeTotal: function() {
         if (this.cart) {
           return this.cart.reduce(function(total, entry) {
-            return total + entry.quantity * entry.item.price;
+            return total + entry.quantity * entry.item.salePrice;
           }, 0);
         }
 
