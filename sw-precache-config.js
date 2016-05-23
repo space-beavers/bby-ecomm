@@ -10,7 +10,7 @@ module.exports = {
   runtimeCaching: [
     {
       // urlPattern: /\/data\/images\/.*/,
-      urlPattern: /\/multimedia.bbycastatic.ca\/.*/,
+      urlPattern: /\/multimedia.bbycastatic.ca\/multimedia\//,
       handler: 'cacheFirst',
       options: {
         cache: {
@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\/www-ssl.bestbuy.ca\/api\/v2\/json\/search\//,
+      urlPattern: /\/api\//,
       handler: 'fastest',
       options: {
         cache: {
