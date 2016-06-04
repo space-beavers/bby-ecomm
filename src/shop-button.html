@@ -21,11 +21,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       shop-button > * {
         display: inline-block;
         box-sizing: border-box;
-        border: 2px solid #000;
+        border: 2px solid #cccccc;
         background-color: #FFF;
         font-size: 14px;
         font-weight: 500;
-        color: var(--app-primary-color);
+        color: #007fd8;
         margin: 0;
         padding: 8px 44px;
         text-align: center;
@@ -34,17 +34,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-radius: 0;
         outline: none;
         -webkit-appearance: none;
+        transition: all 70ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      shop-button > *:hover {
+        background-color: #003b64;
+        color: #FFF;
+        cursor: pointer;
       }
 
       shop-button > *:focus {
-        background-color: #c5cad3;
-      }
-
-      shop-button > *:active {
-        background-color: #000;
+        background-color: #003b64;
         color: #FFF;
       }
 
+      shop-button > *:active {
+        background-color: #003b64;
+        color: #FFF;
+      }
       @media (max-width: 767px) {
 
         /* Responsive buttons are used in shop-detail, shop-cart and shop-checkout */
