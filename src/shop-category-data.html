@@ -46,14 +46,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         name: 'computers_tablets_ereaders',
         title: 'Computers, Tablets & eReaders',
         searchPath: 'category%253aComputers%2B%2526%2BTablets',
-        image: '/images/laptops_ultrabooks.jpg',
+        image: '/images/categories/1-computers.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
       },
       {
         name: 'ink_office_supplies_telephones',
         title: 'Ink, Office Supplies & Telephones',
         searchPath: 'category%253aOffice%2BSupplies%2B%2526%2BInk',
-        image: '/images/',
+        image: '/images/categories/2-ink-office.jpg',
         placeholder: ''
       },
       {
@@ -81,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         name: 'smart_home_control_automation',
         title: 'Smart Home Control & Automation',
         searchPath: 'category%253aHome%252c%2BFurniture%2B%2526%2BKitchen%253bcategory%253aSmart%2BHome',
-        image: '/images/',
+        image: '/images/categories/6-smart-home.jpg',
         placeholder: ''
       },
       {
@@ -130,7 +130,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         name: 'home_furniture_kitchen',
         title: 'Home, Furniture & Kitchen',
         searchPath: 'category%253aHome%252c%2BFurniture%2B%2526%2BKitchen',
-        image: '/images/',
+        image: '/images/categories/14-furniture.jpg',
         placeholder: ''
       },
       {
@@ -213,7 +213,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         // test get live data for laptops & ultrabooks
         this._getResource({
-          url: '/data/' + category.name + '.json',
+          url: '/data/categories/' + category.name + '.json',
           onLoad: function(e) {
             this.set('category.items', JSON.parse(e.target.responseText).products);
           },
