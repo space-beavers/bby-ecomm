@@ -51,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding-top: 100%;
       }
-      
+
       paper-radio-group {
         /*position: relative;*/
         /*display: block;*/
@@ -173,7 +173,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="detail" has-content$="[[_isDefined(item)]]">
         <h1>[[item.name]]</h1>
         <div class="price">[[_formatPrice(item.salePrice)]]</div>
-        <shop-rating></shop-rating>
+        <shop-rating rating="[[item.customerRating]]" total-ratings="[[item.customerRatingCount]]"></shop-rating>
         <div class="pickers">
           <shop-select>
             <label id="sizeLabel" prefix>Colour</label>
