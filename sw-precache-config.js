@@ -20,7 +20,17 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\/data\/.*json/,
+      urlPattern: /\/data\/categories\/.*json/,
+      handler: 'fastest',
+      options: {
+        cache: {
+          maxEntries: 100,
+          name: 'data-cache'
+        }
+      }
+    },
+    {
+      urlPattern: /\/data\/i18n\/.*json/,
       handler: 'fastest',
       options: {
         cache: {
