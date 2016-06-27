@@ -327,7 +327,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <iron-pages role="main" selected="[[page]]" attr-for-selected="name" selected-attribute="visible">
       <!-- home view -->
-      <shop-home name="home" categories="[[categories]]"></shop-home>
+      <shop-home name="home" categories="[[categories]]" language={{language}}></shop-home>
       <!-- list view of items in a category -->
       <shop-list name="list" route="[[subroute]]" offline="[[offline]]"></shop-list>
       <!-- detail view of one item -->
