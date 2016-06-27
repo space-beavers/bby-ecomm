@@ -285,7 +285,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
         </div>
         <div class="logo" title><a href="/" aria-label="Best Buy Canada Home"><img src="/images/logo.svg" height="44" /></a></div>
-        <span>{{localize('greeting')}}</span>
         <paper-toggle-button on-change="_toggleLang" id="switch">EN / FR</paper-toggle-button>
 
 
@@ -328,7 +327,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer opened="{{drawerOpened}}" swipe-open tabindex="0">
         <iron-selector role="navigation" class="drawer-list" selected="[[categoryName]]" attr-for-selected="name">
           <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
-            <a name="[[category.name]]" href="/list/[[category.name]]">[[category.title]]</a>
+            <a name="[[category.name]]" href="/list/[[category.name]]">{{localize(category.name)}}</a>
           </template>
         </iron-selector>
       </app-drawer>
