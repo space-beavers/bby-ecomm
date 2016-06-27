@@ -1,0 +1,36 @@
+{
+  "en": {
+    "cell_phones": "Cell Phones",
+    "computers_tablets_ereaders": "Computers, Tablets & eReaders",
+    "ink_office_supplies_telephones": "Ink, Office Supplies & Telephones",
+    "tv_home_theatre": "TV & Home Theatre",
+    "cameras_camcorders_drones": "Cameras, Camcorders & Drones",
+    "audio_car_electronics": "Audio & Car Electronics",
+    "smart_home_control_automation": "Smart Home Control & Automation",
+    "wearable_technology": "Wearable Technology",
+    "musical_instruments": "Musical Instruments",
+    "video_games_movies_music": "Video Games, Movies & Music",
+    "appliances": "Appliances",
+    "baby_maternity_beauty": "Baby, Maternity & Beauty",
+    "fitness_luggage_fashion": "Fitness, Luggage & Fashion",
+    "home_furniture_kitchen": "Home, Furniture & Kitchen",
+    "toys_sports_recreation": "Toys, Sports & Recreation"
+  },
+  "fr": {
+    "cell_phones": "Cellulaires",
+    "computers_tablets_ereaders": "Ordinateurs, tablettes",
+    "ink_office_supplies_telephones": "Fournitures, encre et téléphones",
+    "tv_home_theatre": "Télé et cinéma maison",
+    "cameras_camcorders_drones": "Appareils photo, caméscopes et drones",
+    "audio_car_electronics": "Audio et électronique pour l'auto",
+    "smart_home_control_automation": "Maison connectée et domotique",
+    "wearable_technology": "Technologie Portable",
+    "musical_instruments": "Instruments de musique",
+    "video_games_movies_music": "Jeux vidéo, films et musique",
+    "appliances": "Électroménagers",
+    "baby_maternity_beauty": "Bébés, maternité et beauté",
+    "fitness_luggage_fashion": "Mise en forme, bagages et mode",
+    "home_furniture_kitchen": "Domicile, meubles et cuisine",
+    "toys_sports_recreation": "Jouets, sports et récréation"
+  }
+}

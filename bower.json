@@ -23,7 +23,8 @@
     "paper-spinner": "polymerelements/paper-spinner#^1.0.0",
     "paper-radio-group": "polymerelements/paper-radio-group#^1.0.0",
     "paper-radio-button": "polymerelements/paper-radio-button#^1.0.0",
-    "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0"
+    "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0",
+    "app-localize-behavior": "PolymerElements/app-localize-behavior#^0.9.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
