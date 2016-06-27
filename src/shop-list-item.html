@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <shop-image src="[[_imageAt400x400(item.thumbnailImage)]]" alt="[[item.name]]"></shop-image>
     <div class="title">[[item.name]]</div>
     <span class="price">[[_formatPrice(item.salePrice)]]</span>
-    <shop-rating rating="[[item.customerRating]]"></shop-rating>
+    <shop-rating rating="[[item.customerRating]]" total-ratings="[[item.customerRatingCount]]"></shop-rating>
 
   </template>
 

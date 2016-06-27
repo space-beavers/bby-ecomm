@@ -11,8 +11,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
-<link rel="import" href="image-dimensions-behavior.html">
-
 <dom-module id="shop-rating">
 
   <template>
@@ -22,83 +20,97 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         text-align: center;
       }
-      
+
       paper-icon-button,
-      .reviews {
+      .total-ratings {
         color: var(--app-secondary-color);
       }
-      
+
     </style>
 
-    
-    <!-- TODO: Ratings should be in it's own component -->
     <div class="ratings">
-      <paper-icon-button icon="star"></paper-icon-button>
-      <paper-icon-button icon="star"></paper-icon-button>
-      <paper-icon-button icon="star-half"></paper-icon-button>
-      <paper-icon-button icon="star-border"></paper-icon-button>
-      <paper-icon-button icon="star-border"></paper-icon-button>
-      
-      <!--<template is="dom-repeat" items="{{employees}}">-->
-        <!--<paper-icon-button icon="star"></paper-icon-button>-->
-      <!--</template>-->
-      
-      <!--<template if="{{hasHalfRating}}">-->
-      <!--  <paper-icon-button icon="star-half"></paper-icon-button>-->
-      <!--</template>-->
-      
-      <!--<template items="{{this.hasHalfRating}}">-->
-        
-      <!--</template>-->
-      
-      <!--<template items>-->
-        
-      <!--</template>-->
-      
-      
-      
-      <!--<icons:star></icons:star>-->
-      <!--<div class="rating">Rating</div>-->
-      <div class="reviews">(<span>{{hasHalfRating}}</span>)</div>
+      <!--TODO: clean this up to just have one paper-icon-button that takes a "type (star|star-half|star-border)"-->
+      <template is="dom-repeat" items="{{integerRatings}}">
+        <paper-icon-button icon="star"></paper-icon-button>
+      </template>
+
+      <template is="dom-if" if="{{hasHalfRating}}">
+        <paper-icon-button icon="star-half"></paper-icon-button>
+      </template>
+
+      <template is="dom-repeat" items="{{borderRatings}}">
+        <paper-icon-button icon="star-border"></paper-icon-button>
+      </template>
+
+      <div class="total-ratings">(<span>{{totalRatings}}</span>)</div>
     </div>
-    
-    
+
+
 
   </template>
 
   <script>
+    'use strict';
 
     Polymer({
 
       is: 'shop-rating',
 
       properties: {
-
-        item: Object,
-        
         rating: {
-          type: Number
+          type: Number,
+          value: 0
         },
-        
-        wholeRating: Number,
-        
+
+        totalRatings: Number,
+
+        // array to represent number of times to loop when creating stars
+        integerRatings: {
+          type: Array,
+          computed: '_computeIntegerRatings(rating)'
+        },
+
         hasHalfRating: {
-          type: Boolean
+          type: Boolean,
+          computed: '_computeHasHalfRating(rating)'
+        },
+
+        borderRatings: {
+          type: Array,
+          computed: '_computeBorderRatings(totalStars, rating)'
+        },
+
+        totalStars: {
+          type: Number,
+          value: 5
         }
-
       },
 
-      behaviors: [ImageDimensionsBehavior],
-      
-      ready: function() {
-        this.wholeRating = parseInt(this.rating);
-        this.hasHalfRating = (this.rating % 1) > 0.5;
-        console.log('rating is', this.rating, 'whole', this.wholeRating, 'hasHalfStar?', this.hasHalfRating);
+      //TODO: move this to a iterable behaviour
+      _computeIntegerRatings: function(rating) {
+        var ratings = [];
+        var i=0;
+        var ratingInt = parseInt(rating);
+        for(i=0; i < ratingInt; i++) {
+          ratings.push({ratingNumber: i});
+        }
+        return ratings;
       },
 
-      // _shopRating: function(rating) {
-      //   var wholeRatings = parseInt()
-      // }
+      _computeHasHalfRating: function(rating) {
+        return (rating % 1) > 0.5;
+      },
+
+      //TODO: move this to a iterable behaviour
+      _computeBorderRatings: function(totalStars, rating) {
+        var borderRatings = [];
+        var i=0;
+        var borderRatingInt = this.totalStars - parseInt(rating);
+        for(i=0; i < borderRatingInt; i++) {
+          borderRatings.push({ratingNumber: i});
+        }
+        return borderRatings;
+      }
 
     });
 
