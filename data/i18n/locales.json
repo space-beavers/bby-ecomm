@@ -1,5 +1,6 @@
 {
   "en": {
+    "greeting": "Hello!",
     "cell_phones": "Cell Phones",
     "computers_tablets_ereaders": "Computers, Tablets & eReaders",
     "ink_office_supplies_telephones": "Ink, Office Supplies & Telephones",
@@ -17,6 +18,7 @@
     "toys_sports_recreation": "Toys, Sports & Recreation"
   },
   "fr": {
+    "greeting": "Bonjour!",
     "cell_phones": "Cellulaires",
     "computers_tablets_ereaders": "Ordinateurs, tablettes",
     "ink_office_supplies_telephones": "Fournitures, encre et téléphones",
