@@ -1,6 +1,6 @@
 {
   "firebase": "bby-ecomm",
-  "public": "build/unbundled",
+  "public": "build/bundled",
   "ignore": [
     "firebase.json",
     "**/.*",
