@@ -18,6 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="shop-category-data.html">
 <!-- Since 'home' is the default route, eagerly load it. -->
 <link rel="import" href="shop-home.html">
@@ -125,21 +127,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: 66px;
       }
 
-      shop-tabs, shop-tab {
-        --shop-tab-overlay: {
-          border-bottom: 2px solid var(--app-accent-color);
-        };
-      }
-
-      shop-tabs {
+      shop-tabs, paper-tabs {
         height: 100%;
+        --paper-tabs-selection-bar-color: var(--app-primary-color);
+        --paper-tabs-selection-bar: var(--app-primary-color);
+        --paper-tabs: var(--app-primary-color);
+        /*@apply(--layout);*/
+        /*@apply(--layout-center-center);*/
       }
 
-      shop-tab {
-        margin: 0 10px;
+      shop-tab, paper-tab {
+        margin: 20px 10px;
+        --paper-tab-ink: var(--app-primary-color);
+        --paper-tab: var(--app-primary-color);
+        --paper-tab-content: var(--app-primary-color);
+        --paper-tab-content-unselected: var(--app-primary-color);
+        /*display: inline-block;*/
+        /*position: relative;*/
       }
 
-      shop-tab a {
+      shop-tab a, paper-tab a {
         display: inline-block;
         outline: none;
         padding: 9px 5px;
@@ -288,15 +295,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Lazy-create the tabs for larger screen sizes. -->
       <div id="tabContainer" primary$="[[_shouldShowTabs]]" hidden$="[[!_shouldShowTabs]]">
         <template is="dom-if" if="[[_shouldRenderTabs]]">
-          <shop-tabs
-              selected="[[categoryName]]"
-              attr-for-selected="name">
-            <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
-              <shop-tab name="[[category.name]]">
+        
+        <paper-tabs selected="[[categoryName]]" attr-for-selected="name" scrollable noink>
+          <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
+          <paper-tab name="[[category.name]]">
                 <a href="/list/[[category.name]]">[[category.title]]</a>
-              </shop-tab>
+              </paper-tab>
             </template>
-          </shop-tabs>
+        </paper-tabs>
+        
+          <!--<shop-tabs-->
+          <!--    selected="[[categoryName]]"-->
+          <!--    attr-for-selected="name">-->
+          <!--  <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">-->
+          <!--    <shop-tab name="[[category.name]]">-->
+          <!--      <a href="/list/[[category.name]]">[[category.title]]</a>-->
+          <!--    </shop-tab>-->
+          <!--  </template>-->
+          <!--</shop-tabs>-->
         </template>
       </div>
     </app-header>

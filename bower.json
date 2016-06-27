@@ -20,6 +20,7 @@
     "iron-swipeable-container": "polymerelements/iron-swipeable-container#^1.0.0",
     "iron-selector": "polymerelements/iron-selector#^1.0.0",
     "paper-icon-button": "polymerelements/paper-icon-button#^1.0.0",
+    "paper-tabs": "polymerelements/paper-tabs#^1.0.0",
     "paper-spinner": "polymerelements/paper-spinner#^1.0.0",
     "paper-radio-group": "polymerelements/paper-radio-group#^1.0.0",
     "paper-radio-button": "polymerelements/paper-radio-button#^1.0.0",
