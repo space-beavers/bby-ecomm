@@ -18,8 +18,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<<<<<<< HEAD
+<link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
+
+=======
 <link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+>>>>>>> ef4a5d63f403bda5f93402b701c493d58a83c591
 <link rel="import" href="shop-category-data.html">
 <!-- Since 'home' is the default route, eagerly load it. -->
 <link rel="import" href="shop-home.html">
@@ -66,7 +71,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-icon-button {
         color: #fff;
       }
-      
+
       paper-toggle-button {
         --paper-toggle-button-label-color: #fff;
         --paper-toggle-button-checked-bar-color: lightblue;
@@ -277,8 +282,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="logo" title><a href="/" aria-label="Best Buy Canada Home"><img src="/images/logo.svg" height="44" /></a></div>
 
-        <paper-toggle-button checked on-change="_toggle">EN / FR</paper-toggle-button>
-        
+        <paper-toggle-button on-change="_toggleLang" id="switch">EN / FR</paper-toggle-button>
+
 
         <div class="cart-btn-container">
           <a href="/cart" tabindex="-1">
@@ -291,15 +296,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Lazy-create the tabs for larger screen sizes. -->
       <div id="tabContainer" primary$="[[_shouldShowTabs]]" hidden$="[[!_shouldShowTabs]]">
         <template is="dom-if" if="[[_shouldRenderTabs]]">
-        
+
         <paper-tabs selected="[[categoryName]]" attr-for-selected="name" scrollable noink>
           <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
           <paper-tab name="[[category.name]]">
-                <a href="/list/[[category.name]]">[[category.title]]</a>
+                <a href="/list/[[category.name]]">{{localize(category.name)}}</a>
               </paper-tab>
             </template>
         </paper-tabs>
-        
+
           <!--<shop-tabs-->
           <!--    selected="[[categoryName]]"-->
           <!--    attr-for-selected="name">-->
@@ -369,6 +374,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: 0
         },
 
+        language: {
+          value: 'en',
+          type: String
+        },
+
         _shouldShowTabs: {
           computed: '_computeShouldShowTabs(page, smallScreen)'
         },
@@ -395,10 +405,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         'dom-change': '_domChange'
       },
 
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
       created: function() {
         window.performance && performance.mark && performance.mark('shop-app.created');
         // Custom elements polyfill safe way to indicate an element has been upgraded.
         this.removeAttribute('unresolved');
+      },
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('/data/i18n/locales.json'));
       },
 
       ready: function() {
@@ -481,6 +499,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.drawerOpened = !this.drawerOpened;
       },
 
+      _toggleLang: function() {
+        this.language = this.$.switch.checked ? 'fr' : 'en';
+      },
+
       // Elements in the app can notify section changes.
       // Response by a11y announcing the section and syncronizing the category.
       _onChangeSection: function(event) {
@@ -559,8 +581,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _computePluralizedQuantity: function(quantity) {
         return quantity + ' ' + (quantity === 1 ? 'item' : 'items');
-      },
-      
+      }
+
     });
 
   </script>
