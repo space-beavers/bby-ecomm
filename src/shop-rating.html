@@ -1,0 +1,107 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="image-dimensions-behavior.html">
+
+<dom-module id="shop-rating">
+
+  <template>
+
+    <style>
+
+      :host {
+        text-align: center;
+      }
+      
+      paper-icon-button,
+      .reviews {
+        color: var(--app-secondary-color);
+      }
+      
+    </style>
+
+    
+    <!-- TODO: Ratings should be in it's own component -->
+    <div class="ratings">
+      <paper-icon-button icon="star"></paper-icon-button>
+      <paper-icon-button icon="star"></paper-icon-button>
+      <paper-icon-button icon="star-half"></paper-icon-button>
+      <paper-icon-button icon="star-border"></paper-icon-button>
+      <paper-icon-button icon="star-border"></paper-icon-button>
+      
+      <!--<template is="dom-repeat" items="{{employees}}">-->
+        <!--<paper-icon-button icon="star"></paper-icon-button>-->
+      <!--</template>-->
+      
+      <!--<template if="{{hasHalfRating}}">-->
+      <!--  <paper-icon-button icon="star-half"></paper-icon-button>-->
+      <!--</template>-->
+      
+      <!--<template items="{{this.hasHalfRating}}">-->
+        
+      <!--</template>-->
+      
+      <!--<template items>-->
+        
+      <!--</template>-->
+      
+      
+      
+      <!--<icons:star></icons:star>-->
+      <!--<div class="rating">Rating</div>-->
+      <div class="reviews">(<span>{{hasHalfRating}}</span>)</div>
+    </div>
+    
+    
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'shop-rating',
+
+      properties: {
+
+        item: Object,
+        
+        rating: {
+          type: Number
+        },
+        
+        wholeRating: Number,
+        
+        hasHalfRating: {
+          type: Boolean
+        }
+
+      },
+
+      behaviors: [ImageDimensionsBehavior],
+      
+      ready: function() {
+        this.wholeRating = parseInt(this.rating);
+        this.hasHalfRating = (this.rating % 1) > 0.5;
+        console.log('rating is', this.rating, 'whole', this.wholeRating, 'hasHalfStar?', this.hasHalfRating);
+      },
+
+      // _shopRating: function(rating) {
+      //   var wholeRatings = parseInt()
+      // }
+
+    });
+
+  </script>
+
+</dom-module>

@@ -31,7 +31,7 @@ handlers:
   upload: manifest.json
   secure: always
 
-- url: /.*
+- url: .*
   static_files: index.html
   upload: index.html
   secure: always

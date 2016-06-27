@@ -37,6 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --app-primary-color: #202020;
         --app-secondary-color: #757575;
         --app-accent-color: #172C50;
+        --app-badge-color: #f44336;
         --paper-button-ink-color: var(--app-accent-color);
         --paper-icon-button-ink-color: var(--app-accent-color);
         --paper-spinner-color: var(--app-accent-color);
@@ -63,9 +64,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-icon-button {
         color: #fff;
       }
+      
+      paper-toggle-button {
+        --paper-toggle-button-label-color: #fff;
+        --paper-toggle-button-checked-bar-color: lightblue;
+        --paper-toggle-button-checked-button-color: lightblue;
+        --paper-toggle-button-checked-ink-color: lightblue;
+        --paper-toggle-button-unchecked-bar-color: var(--app-accent-color);
+        --paper-toggle-button-unchecked-button-color: var(--app-accent-color);
+        --paper-toggle-button-unchecked-ink-color: var(--app-accent-color);
+        font-size: 14px;
+      }
 
       .logo {
-        text-align: center;
+        /*text-align: center;*/
+        margin-top: 7px;
       }
 
       .logo a {
@@ -142,7 +155,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         right: 0;
         width: 20px;
         height: 20px;
-        background-color: var(--app-accent-color);
+        background-color: var(--app-badge-color);
         border-radius: 50%;
         color: white;
         font-size: 12px;
@@ -259,7 +272,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-icon-button icon="arrow-back" aria-label="Go back"></paper-icon-button>
           </a>
         </div>
-        <div class="logo" title><a href="/" aria-label="SHOP Home"><img src="/images/logo.svg" height="42" /></a></div>
+        <div class="logo" title><a href="/" aria-label="Best Buy Canada Home"><img src="/images/logo.svg" height="44" /></a></div>
+        <paper-toggle-button checked on-change="_toggle">EN / FR</paper-toggle-button>
+        
         <div class="cart-btn-container">
           <a href="/cart" tabindex="-1">
             <paper-icon-button icon="shopping-cart" aria-label$="Shopping cart: [[_computePluralizedQuantity(numItems)]]"></paper-icon-button>
@@ -310,7 +325,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-pages>
 
     <footer>
-      <a href="https://www.polymer-project.org/1.0/toolbox/">Made by Polymer</a>
+      <a href="https://www.polymer-project.org/1.0/toolbox/">Made with Polymer</a>
     </footer>
 
     <!-- a11y announcer -->
@@ -530,8 +545,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _computePluralizedQuantity: function(quantity) {
         return quantity + ' ' + (quantity === 1 ? 'item' : 'items');
-      }
-
+      },
+      
     });
 
   </script>

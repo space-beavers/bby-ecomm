@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <link rel="import" href="image-dimensions-behavior.html">
+<link rel="import" href="shop-rating.html">
 
 <dom-module id="shop-list-item">
 
@@ -56,6 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <shop-image src="[[_imageAt400x400(item.thumbnailImage)]]" alt="[[item.name]]"></shop-image>
     <div class="title">[[item.name]]</div>
     <span class="price">[[_formatPrice(item.salePrice)]]</span>
+    <shop-rating rating="[[item.customerRating]]"></shop-rating>
 
   </template>
 

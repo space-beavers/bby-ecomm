@@ -1,5 +1,5 @@
 {
-  "name": "BestBuy E-Commerce",
+  "name": "bby-ecomm",
   "version": "1.0",
   "authors": [
     "The Polymer Authors"
@@ -17,9 +17,13 @@
     "iron-media-query": "polymerelements/iron-media-query#^1.0.0",
     "iron-overlay-behavior": "polymerelements/iron-overlay-behavior#^1.0.0",
     "iron-pages": "polymerelements/iron-pages#^1.0.0",
+    "iron-swipeable-container": "polymerelements/iron-swipeable-container#^1.0.0",
     "iron-selector": "polymerelements/iron-selector#^1.0.0",
     "paper-icon-button": "polymerelements/paper-icon-button#^1.0.0",
-    "paper-spinner": "polymerelements/paper-spinner#^1.0.0"
+    "paper-spinner": "polymerelements/paper-spinner#^1.0.0",
+    "paper-radio-group": "polymerelements/paper-radio-group#^1.0.0",
+    "paper-radio-button": "polymerelements/paper-radio-button#^1.0.0",
+    "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

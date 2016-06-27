@@ -17,6 +17,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-image.html">
 <link rel="import" href="shop-select.html">
 
+<link rel="import" href="shop-rating.html">
+
 <link rel="import" href="image-dimensions-behavior.html">
 
 <dom-module id="shop-detail">
@@ -39,7 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin: 64px 32px;
         width: 50%;
         max-width: 600px;
-        --shop-image-img: {
+        --shop-image-img {
           @apply(--layout-fit);
         };
       }
@@ -48,6 +50,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         content: "";
         display: block;
         padding-top: 100%;
+      }
+      
+      paper-radio-group {
+        /*position: relative;*/
+        /*display: block;*/
+        /*@apply(--layout-horizontal);*/
+        /*@apply(--layout-center-justified);*/
       }
 
       .detail {
@@ -70,7 +79,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .price {
-        margin: 16px 0 40px;
+        margin: 16px 0 16px;
         font-size: 16px;
         color: var(--app-secondary-color);
       }
@@ -151,19 +160,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         failure="{{failure}}"></shop-category-data>
 
     <div id="content" hidden$="[[failure]]">
-      <shop-image alt="[[item.name]]" src="[[_imageAt400x400(item.thumbnailImage)]]"></shop-image>
+      <!--<iron-pages selected="0">-->
+      <!--<iron-swipeable-container>-->
+        <shop-image alt="[[item.name]]" src="[[_imageAt400x400(item.thumbnailImage)]]"></shop-image>
+        <!--<paper-radio-group selected="1">-->
+        <!--  <paper-radio-button name="1"></paper-radio-button>-->
+        <!--  <paper-radio-button name="2"></paper-radio-button>-->
+        <!--  <paper-radio-button name="3"></paper-radio-button>-->
+        <!--</paper-radio-group>-->
+      <!--</iron-swipeable-container>-->
+      <!--</iron-pages>-->
       <div class="detail" has-content$="[[_isDefined(item)]]">
         <h1>[[item.name]]</h1>
         <div class="price">[[_formatPrice(item.salePrice)]]</div>
+        <shop-rating></shop-rating>
         <div class="pickers">
           <shop-select>
-            <label id="sizeLabel" prefix>Size</label>
+            <label id="sizeLabel" prefix>Colour</label>
             <select id="sizeSelect" aria-labelledby="sizeLabel">
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M" selected>M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
+              <option value="black">Matte Black</option>
+              <option value="grey">Space Grey</option>
+              <option value="steel" selected>Blue Steel</option>
+              <option value="white">Pure White</option>
             </select>
             <shop-md-decorator aria-hidden="true">
               <shop-underline></shop-underline>

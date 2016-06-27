@@ -16,26 +16,72 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   (function() {
     var categoryList = [
       {
-        name: 'laptops_ultrabooks',
-        title: 'Laptops & Ultrabooks',
+        name: 'computers_and_tablets',
+        title: 'Computers & Tablets',
+        searchPath: 'category%253aComputers%2B%2526%2BTablets',
         image: '/images/laptops_ultrabooks.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
       },
       {
         name: 'televisions',
         title: 'Televisions',
+        searchPath: 'category%253aTV%2B%2526%2BHome%2BTheatre%253bcategory%253aTelevisions',
         image: '/images/televisions.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUG/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQIDABEhBSJRBBITFDH/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/EABwRAAIDAQADAAAAAAAAAAAAAAECABExITJRYf/aAAwDAQACEQMRAD8A0WrLP7sU4nkRFiMfiR2UE7rNtYC+eKUWUOhRurYNZ0Z0S46uPJbo+r+ZKel63PP08BdRcgIc/SMd2eaVCTYi2ydPZfvSnBP/2Q=='
       },
       {
         name: 'appliances',
         title: 'Appliances',
+        searchPath: 'category%253aAppliances',
         image: '/images/appliances.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBv/EABwQAAICAwEBAAAAAAAAAAAAAAECAAMEEXEUgf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Az9Wc2Pk1oEDqwfYPBEQn12uCDrVmg3zsRKsST//Z");'
       },
       {
         name: 'cell_phones_plans',
         title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
+        image: '/images/cell_phones_plans.jpg',
+        placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
+      },
+      {
+        name: 'cell_phones_plans',
+        title: 'Cell Phones & Plans',
+        searchPath: 'category%253aBest%2BBuy%2BMobile%253bcategory%253aCell%2BPhones%2B%2526%2BPlans',
         image: '/images/cell_phones_plans.jpg',
         placeholder: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgXEhQUFBQSFxcbHB4cGxckJCcnJCQ1MzMzNTs7Ozs7Ozs7Ozv/2wBDAQ0LCw0ODRAODhAUDg8OFBQQEREQFB0UFBUUFB0lGhcXFxcaJSAjHh4eIyAoKCUlKCgyMjAyMjs7Ozs7Ozs7Ozv/wAARCAAFABMDARIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAUGB//EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABAVhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTsYFfk4fTlG469ieIbEkphVUQiEEGghayaPvysYExy4W1udq67yGZoYkRpWss5UAFmJJNmrNnGB//2Q=='
       }
@@ -110,9 +156,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           return;
         }
 
+
+        var searchUrl = 'https://www-ssl.bestbuy.ca/api/v2/json/search?' +
+                        'lang=en&include=resources&query=&page=1&path=' +
+                        category.searchPath;
+
         // test get live data for laptops & ultrabooks
         this._getResource({
-          url: '/data/' + category.name + '.json',
+          url: searchUrl,
           onLoad: function(e) {
             this.set('category.items', JSON.parse(e.target.responseText).products);
           },
