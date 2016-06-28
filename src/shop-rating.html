@@ -42,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-icon-button icon="star-border"></paper-icon-button>
       </template>
 
-      <div class="total-ratings">(<span>{{totalRatings}}</span>) - {{rating}}</div>
+      <div class="total-ratings">(<span>{{totalRatings}}</span>)</div>
     </div>
 
 
@@ -113,9 +113,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         for(i=0; i < borderRatingInt; i++) {
           borderRatings.push({ratingNumber: i});
         }
-        if (this.hasHalfRating) {
-          borderRatings--;
-        }
+
         return borderRatings;
       }
 
