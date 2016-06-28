@@ -109,6 +109,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         for(i=0; i < borderRatingInt; i++) {
           borderRatings.push({ratingNumber: i});
         }
+        if (this.hasHalfRating) {
+          borderRatings--;
+        }
         return borderRatings;
       }
 
